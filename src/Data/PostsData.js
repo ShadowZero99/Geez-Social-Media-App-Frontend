@@ -7,7 +7,7 @@ export const PostsData = [
   {
     img: i5,
     name: "Ann Marry",
-    desc: "My new Adventure... with my Travel Bag...",
+    desc: "Its not a just Ice-cream",
     likes: 2300,
     liked: true,
   },
@@ -28,7 +28,7 @@ export const PostsData = [
   {
     img: i8,
     name: "Sara lowern",
-    desc: "Old ios Gold!!!",
+    desc: "Old is Gold!!!",
     likes: 1300,
     liked: true,
   },

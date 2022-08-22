@@ -12,3 +12,14 @@
   object-fit: cover;
   border-radius: 0.5rem;
 }
+
+.PostReact {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.posts > span:nth-last-of-type(1) {
+  color: var(--gray);
+  font-size: 12px;
+}
