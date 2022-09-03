@@ -59,16 +59,16 @@ export const deletePost = async (req, res) => {
 
 export const likePost = async (req, res) => {
   const id = req.params.id;
-  const { userID } = req.body;
+  const { userId } = req.body;
 
   try {
     const post = await PostModel.findById(id);
-    if (!post.likes.includes(userID)) {
-      await post.updateOne({ $push: { likes: userID } });
-      res.status(200).json("Post liked!");
+    if (!post.likes.includes(userId)) {
+      await post.updateOne({ $push: { likes: userId } });
+      res.status(200).json("Post liked");
     } else {
-      await post.updateOne({ $pull: { likes: userID } });
-      res.status(200).json("Post Unliked!");
+      await post.updateOne({ $pull: { likes: userId } });
+      res.status(200).json("Post Unliked");
     }
   } catch (error) {
     res.status(500).json(error);
@@ -76,10 +76,10 @@ export const likePost = async (req, res) => {
 };
 
 export const getTimelinePosts = async (req, res) => {
-  const userID = req.params.id;
+  const userId = req.params.id;
 
   try {
-    const currentUserPosts = await PostModel.findById({ userID: userID });
+    const currentUserPosts = await PostModel.find({ userId: userId });
     const followingPosts = await UserModel.aggregate([
       {
         $match: {
